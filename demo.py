@@ -226,12 +226,9 @@ def check_login_status():
     logger.info(f"Request endpoint: {request.endpoint}")
     
     # 不需要登录就能访问的路由列表
-    public_endpoints = ['login_page', 'login', 'static', 'check_login', 'logout', 'shutdown']
-    
-    # 检查是否是注册相关的路由
-    if request.path.startswith('/gcai/register') or request.path.startswith('/gcai/get_mac'):
-        logger.info("Allowing access to registration endpoint")
-        return None
+    public_endpoints = ['login_page', 'login', 'static', 'check_login', 'logout', 'shutdown', 
+                       'register.register', 'register.get_mac']
+
         
     # 如果当前路由不是公开路由，且用户未登录，则重定向到登录页面
     if (request.endpoint not in public_endpoints and 

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI项链设计助手</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* 保持原有样式不变 */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 1rem;
+        }
+        
+        .container {
+            max-width: 70%;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .card {
+            background: white;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .card-header {
+            background: white;
+            border-bottom: none;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2rem 1rem;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-header.text-gen {
+            background: linear-gradient(180deg, #4CAF50, #2E7D32);
+            color: white;
+        }
+        
+        .card-header.img-to-text {
+            background: linear-gradient(180deg, #2196F3, #1565C0);
+            color: white;
+        }
+        
+        .card-header.img-gen {
+            background: linear-gradient(180deg, #9C27B0, #6A1B9A);
+            color: white;
+        }
+
+        .card-header h5 {
+            color: inherit;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .card-header h5 i {
+            transform: rotate(90deg);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-body {
+            padding: 2rem;
+            min-height: 500px;
+            flex: 1;
+        }
+        
+        .form-control {
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid #dee2e6;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+            min-height: 266px;
+            font-size: 1.1rem;
+        }
+
+        textarea.form-control {
+            min-height: 333px;
+        }
+
+        .generated-text {
+            min-height: 333px;
+            max-height: 666px;
+            overflow-y: auto;
+            padding: 1.25rem;
+            background-color: #f8f9fa;
+            border-radius: 0.75rem;
+            border: 1px solid #dee2e6;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+        }
+        
+        .btn {
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all var(--transition-speed);
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2.5rem;
+            padding: 2rem 0;
+        }
+        
+        .image-container {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+        }
+        
+        .loading-spinner {
+            width: 3rem;
+            height: 3rem;
+            color: var(--accent-color);
+        }
+        
+        .alert {
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: none;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .card {
+                margin-bottom: 1rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+                <!-- 图片生成部分 -->
+                <div class="card mb-3">
+                    <div class="card-header img-gen">
+                        <h5><i class="bi bi-image"></i> 生成图片</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">选择模型</label>
+                                <select id="modelSelect" class="form-select">
+                                    <option value="">请选择模型...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">生成数量</label>
+                                <select id="batchSize" class="form-select">
+                                    <option value="1">生成1张图片</option>
+                                    <option value="2">生成2张图片</option>
+                                    <option value="3">生成3张图片</option>
+                                    <option value="4">生成4张图片</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label class="form-label">提示词</label>
+                            <textarea id="promptText" class="form-control" rows="3" 
+                                    placeholder="请输入或从上方功能生成的提示词..."></textarea>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button id="generateImage" class="btn btn-primary">
+                                <i class="bi bi-brush"></i> 生成图片
+                            </button>
+                        </div>
+                        <div id="generateAlert" class="alert d-none" role="alert"></div>
+                        <div id="generateLoading" class="loading-container d-none">
+                            <div class="spinner-border loading-spinner" role="status">
+                                <span class="visually-hidden">加载中...</span>
+                            </div>
+                            <p class="text-muted">正在生成图片，请稍候...</p>
+                        </div>
+                        <div id="imageGallery" class="image-gallery"></div>
+                    </div>
+                </div>
+        
+                <!-- 提示词示例 -->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5><i class="bi bi-lightbulb"></i> 提示词示例</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-muted">080-古法吊坠点钻款。</h6>
+                                        <p class="card-text example-prompt" style="cursor: pointer" 
+                                           onclick="usePrompt(this.textContent)">
+                                           080-古法吊坠点钻款。主题：吊坠展示了古老的工艺，其细节繁复的花卉或太阳图案借鉴了凯尔特和新艺术运动等传统文化的设计。
+
+                                            观察方向：从正面直接观看，可以清晰地看到其精细设计和钻石点缀。
+
+                                            形状：圆形，中央装饰有向外辐射的花朵或太阳图案，增添独特的视觉元素。
+
+                                            颜色：吊坠呈明亮的金色调，暗示它是由真正的黄金或高质量的镀金制成，具有耐久性和光泽度。
+
+                                            材质：由金属制成，可能是镀金以呈现黄金外观而没有过多重量，并在其周围镶嵌钻石点缀。
+
+                                            大小：中等到大型尺寸，佩戴时非常显眼。它的设计既适合休闲装也适合正装，能覆盖衣服上较大的区域。
+
+                                            触感：花卉或太阳图案可见的部分表面光滑，与围绕钻石点缀的略带粗糙边缘形成对比。
+
+                                            其他观察：吊坠将传统图案与现代设计元素相结合，小钻石提升了其优雅和闪烁效果。它作为一件独特且具有永恒而时尚的设计感的珠宝脱颖而出。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-muted">081-古法吊坠素金款。</h6>
+                                        <p class="card-text example-prompt" style="cursor: pointer" 
+                                           onclick="usePrompt(this.textContent)">
+                                           081-古法吊坠素金款。吊坠采用精细的浮雕或雕刻图案，体现了古代工艺和精美的金属制作技术如细金工或珐琅工艺。它呈圆形，并带有中心徽标状符号，呈现出深金色调，特征为黄金。虽然吊坠尺寸较小，但其华丽的纹理突显了其历史意义。
+
+                                           **主题:** 吊坠采用东方设计风格，受中国传统或日本艺术影响，具有对称和几何图案。
+                                           **视角:** 从上方观察，提供清晰的顶视图以展示细节。
+                                           **形状:** 中心为圆形徽标，周围环绕复杂的设计。
+                                           **颜色:** 吊坠呈现出深金色调，特征为黄金。
+                                           **材质:** 看起来完全或主要由黄金制成，没有可见的其他材料。
+                                           **尺寸:** 吊坠小巧紧凑，适合各种珠宝配饰而不显得过大。
+                                           **纹理:** 整体光滑但包含凸起和雕刻细节，赋予吊坠质感外观。
+                                           **其他观察:** 吊坠上没有任何铭文或其他元素，表明其意在独立成为引人注目的装饰品。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        <!-- 文本生成部分 -->
+        <div class="card mb-3">
+            <div class="card-header text-gen">
+                <h5><i class="bi bi-text-paragraph"></i> 自动生成提示词</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label">输入文本描述</label>
+                        <textarea id="inputText" class="form-control" rows="5" 
+                                placeholder="请输入您想要的珠宝描述..."></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">生成的提示词</label>
+                        <textarea id="outputText" class="form-control" rows="5" readonly 
+                                placeholder="生成的提示词将显示在这里..."></textarea>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button id="generateText" class="btn btn-primary">
+                        <i class="bi bi-magic"></i> 生成提示词
+                    </button>
+                </div>
+                <div id="textAlert" class="alert d-none" role="alert"></div>
+                <div id="textLoading" class="loading-container d-none">
+                    <div class="spinner-border loading-spinner" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p class="text-muted">正在生成提示词...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 图片转提示词部分 -->
+        <div class="card mb-3">
+            <div class="card-header img-to-text">
+                <h5><i class="bi bi-image-alt"></i> 图片转提示词</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label">上传参考图片</label>
+                        <input type="file" id="imageInput" class="form-control" accept="image/*">
+                        <img id="previewImage" class="preview-image d-none" alt="预览图">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">分析结果</label>
+                        <textarea id="imageText" class="form-control" rows="5" readonly 
+                                placeholder="图片分析结果将显示在这里..."></textarea>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button id="analyzeImage" class="btn btn-primary">
+                        <i class="bi bi-search"></i> 分析图片
+                    </button>
+                </div>
+                <div id="imageAlert" class="alert d-none" role="alert"></div>
+                <div id="imageLoading" class="loading-container d-none">
+                    <div class="spinner-border loading-spinner" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p class="text-muted">正在分析图片...</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleLoading(elementId, show) {
+            document.getElementById(elementId).classList.toggle('d-none', !show);
+        }
+
+        function showAlert(elementId, message, isError = true) {
+            const alert = document.getElementById(elementId);
+            alert.textContent = message;
+            alert.classList.remove('d-none', 'alert-success', 'alert-danger');
+            alert.classList.add(isError ? 'alert-danger' : 'alert-success');
+            setTimeout(() => alert.classList.add('d-none'), 5000);
+        }
+
+        function usePrompt(prompt) {
+            document.getElementById('promptText').value = prompt.trim();
+        }
+
+        // 获取模型列表
+        fetch('/necklace/api/get-models')
+            .then(response => {
+                if (!response.ok) throw new Error('获取模型列表失败');
+                return response.json();
+            })
+            .then(data => {
+                const select = document.getElementById('modelSelect');
+                data.models.forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model;
+                    option.textContent = model.replace('.json', '');
+                    select.appendChild(option);
+                });
+            })
+            .catch(error => {
+                showAlert('generateAlert', '加载模型列表失败：' + error.message);
+            });
+
+        // 文本生成
+        document.getElementById('generateText').addEventListener('click', async () => {
+            const text = document.getElementById('inputText').value;
+            if (!text.trim()) {
+                showAlert('textAlert', '请输入文本');
+                return;
+            }
+
+            toggleLoading('textLoading', true);
+            try {
+                const response = await fetch('/necklace/api/generate-text', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text })
+                });
+
+                if (!response.ok) throw new Error('生成文本失败');
+                const data = await response.json();
+                document.getElementById('outputText').value = data.result;
+                showAlert('textAlert', '生成成功', false);
+            } catch (error) {
+                showAlert('textAlert', error.message);
+            } finally {
+                toggleLoading('textLoading', false);
+            }
+        });
+
+        // 图片预览
+        document.getElementById('imageInput').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.getElementById('previewImage');
+                    preview.src = e.target.result;
+                    preview.classList.remove('d-none');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 图片分析
+        document.getElementById('analyzeImage').addEventListener('click', async () => {
+            const file = document.getElementById('imageInput').files[0];
+            if (!file) {
+                showAlert('imageAlert', '请选择图片');
+                return;
+            }
+
+            toggleLoading('imageLoading', true);
+            try {
+                const formData = new FormData();
+                formData.append('image', file);
+
+                const response = await fetch('/necklace/api/image-to-text', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('图片分析失败');
+                const data = await response.json();
+                document.getElementById('imageText').value = data.result;
+                showAlert('imageAlert', '分析成功', false);
+            } catch (error) {
+                showAlert('imageAlert', error.message);
+            } finally {
+                toggleLoading('imageLoading', false);
+            }
+        });
+
+        // 生成图片
+        document.getElementById('generateImage').addEventListener('click', async () => {
+            const model = document.getElementById('modelSelect').value;
+            const prompt = document.getElementById('promptText').value;
+            const batch = document.getElementById('batchSize').value;
+
+            if (!model || !prompt.trim()) {
+                showAlert('generateAlert', '请选择模型并输入提示词');
+                return;
+            }
+
+            toggleLoading('generateLoading', true);
+            try {
+                const response = await fetch('/necklace/api/create-image', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ model, prompt, batch })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || '生成图片失败');
+                }
+
+                const data = await response.json();
+                const gallery = document.getElementById('imageGallery');
+                gallery.innerHTML = '';
+                
+                if (data.images && data.images.length > 0) {
+                    data.images.forEach(imagePath => {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'image-container';
+                        
+                        const img = document.createElement('img');
+                        const cleanPath = imagePath;  
+                        img.src = `/output/${cleanPath}`;
+                        img.alt = '生成的珠宝图片';
+                        
+                        img.onerror = () => {
+                            console.error(`Image load failed: ${img.src}`);
+                            showAlert('generateAlert', `加载图片失败: ${imagePath}`);
+                        };
+                        
+                        imgContainer.appendChild(img);
+                        gallery.appendChild(imgContainer);
+                    });
+                    showAlert('generateAlert', '图片生成成功！', false);
+                } else {
+                    showAlert('generateAlert', '未能生成图片');
+                }
+            } catch (error) {
+                showAlert('generateAlert', error.message);
+            } finally {
+                toggleLoading('generateLoading', false);
+            }
+        });
+    </script>
+</body>
+</html>

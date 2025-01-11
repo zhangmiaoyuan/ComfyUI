@@ -123,8 +123,8 @@
             submitButton.disabled = true;
             submitButton.textContent = '注册中...';
 
-            // 直接发送到远程服务器
-            fetch('https://www.baiyaoyao.cn/gcai/register', {
+            // 修改为使用本地注册路由
+            fetch('{{ url_for('register.register') }}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

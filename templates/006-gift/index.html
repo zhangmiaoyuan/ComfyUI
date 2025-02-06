@@ -237,6 +237,58 @@
                 margin-bottom: 0.5rem;
             }
         }
+        
+        /* 自定义右键菜单样式 */
+        .custom-context-menu {
+            display: none;
+            position: fixed;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 8px 0;
+            z-index: 1060;
+        }
+
+        .menu-item {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            transition: background-color 0.2s;
+        }
+
+        .menu-item:hover {
+            background-color: var(--background-color);
+        }
+
+        .menu-item i {
+            font-size: 1.1em;
+        }
+
+        .modal-content {
+            background-color: transparent;
+            border: none;
+        }
+        
+        .modal-header {
+            position: absolute;
+            right: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 0 1rem;
+            padding: 0.5rem;
+        }
+        
+        .btn-close {
+            filter: brightness(0) invert(1);
+        }
+        
+        #modalImage {
+            max-height: 90vh;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -419,6 +471,30 @@
 
     </div>
 
+    <!-- 图片放大模态框 -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img id="modalImage" src="" alt="放大的图片" class="img-fluid" oncontextmenu="return false;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自定义右键菜单 -->
+    <div id="contextMenu" class="custom-context-menu">
+        <div class="menu-item" id="saveOriginal">
+            <i class="bi bi-download"></i> 保存原始图片
+        </div>
+        <div class="menu-item" id="saveAs">
+            <i class="bi bi-pencil"></i> 另存为...
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleLoading(elementId, show) {
@@ -569,6 +645,13 @@
                             showAlert('generateAlert', `加载图片失败: ${imagePath}`);
                         };
                         
+                        // 添加点击事件，打开模态框显示大图
+                        imgContainer.addEventListener('click', () => {
+                            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                            document.getElementById('modalImage').src = img.src;
+                            modal.show();
+                        });
+                        
                         imgContainer.appendChild(img);
                         gallery.appendChild(imgContainer);
                     });
@@ -580,6 +663,82 @@
                 showAlert('generateAlert', error.message);
             } finally {
                 toggleLoading('generateLoading', false);
+            }
+        });
+
+        // 自定义右键菜单功能
+        const contextMenu = document.getElementById('contextMenu');
+        const modalImage = document.getElementById('modalImage');
+
+        // 显示自定义右键菜单
+        modalImage.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            contextMenu.style.display = 'block';
+            contextMenu.style.left = `${e.clientX}px`;
+            contextMenu.style.top = `${e.clientY}px`;
+        });
+
+        // 点击其他地方关闭菜单
+        document.addEventListener('click', () => {
+            contextMenu.style.display = 'none';
+        });
+
+        // 保存原始图片
+        document.getElementById('saveOriginal').addEventListener('click', async () => {
+            const imageUrl = modalImage.src;
+            try {
+                const response = await fetch(imageUrl);
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                // 从URL中提取文件名
+                const fileName = imageUrl.split('/').pop();
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('下载图片失败:', error);
+                showAlert('generateAlert', '下载图片失败');
+            }
+        });
+
+        // 另存为...
+        document.getElementById('saveAs').addEventListener('click', async () => {
+            const imageUrl = modalImage.src;
+            try {
+                const response = await fetch(imageUrl);
+                const blob = await response.blob();
+                const suggestedName = `gift_${new Date().getTime()}.png`;
+                
+                // 使用showSaveFilePicker API（现代浏览器支持）
+                try {
+                    const handle = await window.showSaveFilePicker({
+                        suggestedName: suggestedName,
+                        types: [{
+                            description: 'PNG图片',
+                            accept: {'image/png': ['.png']}
+                        }]
+                    });
+                    const writable = await handle.createWritable();
+                    await writable.write(blob);
+                    await writable.close();
+                } catch (e) {
+                    // 如果浏览器不支持showSaveFilePicker，回退到传统方法
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = suggestedName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                }
+            } catch (error) {
+                console.error('保存图片失败:', error);
+                showAlert('generateAlert', '保存图片失败');
             }
         });
     </script>

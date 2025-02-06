@@ -1,0 +1,91 @@
+{
+  "name": "gcai-electron-app",
+  "version": "1.0.0",
+  "description": "GCAI Desktop Application",
+  "author": {
+    "name": "GCAI Team",
+    "email": "support@gcai.com"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64 --config.asar=true",
+    "build-fast": "electron-builder --win --x64 --config.asar=true --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "electron": "16.2.8",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "com.gcai.desktop",
+    "productName": "GCAI Desktop",
+    "compression": "maximum",
+    "directories": {
+      "output": "dist",
+      "buildResources": "buildResources"
+    },
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/",
+      "customDir": "v16.2.8"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "buildResources/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "**/*",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/__pycache__",
+      "!**/.pytest_cache",
+      "!**/.git",
+      "!.idea",
+      "!dist",
+      "!build",
+      "!python",
+      "!models/checkpoints/SD_3.5_L.safetensors",
+      "!models/clip/t5xxl_fp8_e4m3fn.safetensors",
+      "!models/**/*.safetensors"
+    ],
+    "extraResources": [
+      {
+        "from": "./",
+        "to": "app",
+        "filter": [
+          "static/**/*",
+          "python/**/*",
+          "templates/**/*",
+          "blueprints/**/*",
+          "demo.py",
+          "requirements.txt",
+          "models/**/*",
+          "output/**/*",
+          "!**/__pycache__",
+          "!**/*.pyc"
+        ]
+      }
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/python-shell",
+      "app/python"
+    ]
+  }
+}

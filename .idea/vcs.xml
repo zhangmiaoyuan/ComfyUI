@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/AIGODLIKE-ComfyUI-Translation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Advanced-ControlNet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-AnimateDiff-Evolved" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Crystools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Custom-Scripts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Impact-Pack" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Impact-Pack/impact_subpack" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Inspire-Pack" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-KJNodes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Manager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-Marigold" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI-WD14-Tagger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_Comfyroll_CustomNodes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_Custom_Nodes_AlekPet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_FizzNodes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_IPAdapter_plus" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_TiledKSampler" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_UltimateSDUpscale" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_UltimateSDUpscale/repositories/ultimate_sd_upscale" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ComfyUI_experiments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/ControlNet-LLLite-ComfyUI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/Derfuu_ComfyUI_ModdedNodes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/FreeU_Advanced" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/PowerNoiseSuite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/comfyui-workspace-manager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/comfyui_controlnet_aux" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/efficiency-nodes-comfyui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/images-grid-comfy-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/rgthree-comfy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/custom_nodes/stability-ComfyUI-nodes" vcs="Git" />
+  </component>
+</project>

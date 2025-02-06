@@ -1,0 +1,401 @@
+## ComfyUI-Manager: installing dependencies done.
+[2025-02-06 14:17] ** ComfyUI startup time: 2025-02-06 14:17:01.323337
+[2025-02-06 14:17] ** Platform: Windows
+[2025-02-06 14:17] ** Python version: 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+[2025-02-06 14:17] ** Python executable: C:\001-code\001-gcai\python\python.exe
+[2025-02-06 14:17] ** ComfyUI Path: C:\001-code\001-gcai
+[2025-02-06 14:17] ** Log path: C:\001-code\001-gcai\comfyui.log
+[2025-02-06 14:17] 
+Prestartup times for custom nodes:
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\rgthree-comfy
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Marigold
+[2025-02-06 14:17]    1.5 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager
+[2025-02-06 14:17] 
+Total VRAM 24564 MB, total RAM 32579 MB
+[2025-02-06 14:17] pytorch version: 2.3.1+cu121
+[2025-02-06 14:17] xformers version: 0.0.27
+[2025-02-06 14:17] Set vram state to: NORMAL_VRAM
+[2025-02-06 14:17] Device: cuda:0 NVIDIA GeForce RTX 4090 D : cudaMallocAsync
+[2025-02-06 14:17] Using xformers cross attention
+[2025-02-06 14:17] [Prompt Server] web root: C:\001-code\001-gcai\web
+[2025-02-06 14:17] [Crystools [0;32mINFO[0m] Crystools version: 1.16.6
+[2025-02-06 14:17] [Crystools [0;32mINFO[0m] CPU: 13th Gen Intel(R) Core(TM) i5-13600KF - Arch: AMD64 - OS: Windows 10
+[2025-02-06 14:17] [Crystools [0;32mINFO[0m] Pynvml (Nvidia) initialized.
+[2025-02-06 14:17] [Crystools [0;32mINFO[0m] GPU/s:
+[2025-02-06 14:17] [Crystools [0;32mINFO[0m] 0) NVIDIA GeForce RTX 4090 D
+[2025-02-06 14:17] [Crystools [0;32mINFO[0m] NVIDIA Driver: 560.94
+[2025-02-06 14:17] ### Loading: ComfyUI-Impact-Pack (V7.4)
+[2025-02-06 14:17] [WARN] ComfyUI-Impact-Pack: custom_wildcards path not found: C:\aki\AAPACKING\ComfyUI-aki-v1.3\custom_nodes\ComfyUI-Impact-Pack\modules\impact\..\..\custom_wildcards. Using default path.
+[2025-02-06 14:17] ### Loading: ComfyUI-Impact-Pack (Subpack: V0.6)
+[2025-02-06 14:17] [Impact Pack] Wildcards loading done.
+[2025-02-06 14:17] ### Loading: ComfyUI-Inspire-Pack (V1.0)
+[2025-02-06 14:17] Total VRAM 24564 MB, total RAM 32579 MB
+[2025-02-06 14:17] pytorch version: 2.3.1+cu121
+[2025-02-06 14:17] xformers version: 0.0.27
+[2025-02-06 14:17] Set vram state to: NORMAL_VRAM
+[2025-02-06 14:17] Device: cuda:0 NVIDIA GeForce RTX 4090 D : cudaMallocAsync
+[2025-02-06 14:17] ### Loading: ComfyUI-Manager (V2.50.3)
+[2025-02-06 14:17] ### ComfyUI Revision: 2639 on 'gcai' [0344f374] | Released on '2025-01-11'
+[2025-02-06 14:17] Exception in thread Thread-7 (<lambda>):
+[2025-02-06 14:17] Traceback (most recent call last):
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\connector.py", line 1155, in _create_direct_connection
+[2025-02-06 14:17]     hosts = await asyncio.shield(host_resolved)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\connector.py", line 874, in _resolve_host
+[2025-02-06 14:17]     addrs = await self._resolver.resolve(host, port, family=self._family)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\resolver.py", line 33, in resolve
+[2025-02-06 14:17]     infos = await self._loop.getaddrinfo(
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\asyncio\base_events.py", line 863, in getaddrinfo
+[2025-02-06 14:17]     return await self.run_in_executor(
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\concurrent\futures\thread.py", line 58, in run
+[2025-02-06 14:17]     result = self.fn(*self.args, **self.kwargs)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\socket.py", line 955, in getaddrinfo
+[2025-02-06 14:17]     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+[2025-02-06 14:17] socket.gaierror: [Errno 11004] getaddrinfo failed
+[2025-02-06 14:17] 
+The above exception was the direct cause of the following exception:
+
+[2025-02-06 14:17] Traceback (most recent call last):
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\threading.py", line 1016, in _bootstrap_inner
+[2025-02-06 14:17]     self.run()
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\threading.py", line 953, in run
+[2025-02-06 14:17]     self._target(*self._args, **self._kwargs)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager\glob\manager_server.py", line 1343, in <lambda>
+[2025-02-06 14:17]     threading.Thread(target=lambda: asyncio.run(default_cache_update())).start()
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\asyncio\runners.py", line 44, in run
+[2025-02-06 14:17]     return loop.run_until_complete(main)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\asyncio\base_events.py", line 649, in run_until_complete
+[2025-02-06 14:17]     return future.result()
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager\glob\manager_server.py", line 1340, in default_cache_update
+[2025-02-06 14:17]     await asyncio.gather(a, b, c, d, e)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager\glob\manager_server.py", line 1327, in get_cache
+[2025-02-06 14:17]     json_obj = await core.get_data(uri, True)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager\glob\manager_core.py", line 620, in get_data
+[2025-02-06 14:17]     async with session.get(uri) as resp:
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+[2025-02-06 14:17]     self._resp = await self._coro
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\client.py", line 536, in _request
+[2025-02-06 14:17]     conn = await self._connector.connect(
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\connector.py", line 540, in connect
+[2025-02-06 14:17]     proto = await self._create_connection(req, traces, timeout)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+[2025-02-06 14:17]     _, proto = await self._create_direct_connection(req, traces, timeout)
+[2025-02-06 14:17] C:\001-code\001-gcai\python\lib\site-packages\diffusers\models\transformers\transformer_2d.py:34: FutureWarning: `Transformer2DModelOutput` is deprecated and will be removed in version 1.0.0. Importing `Transformer2DModelOutput` from `diffusers.models.transformer_2d` is deprecated and this will be removed in a future version. Please use `from diffusers.models.modeling_outputs import Transformer2DModelOutput`, instead.
+  deprecate("Transformer2DModelOutput", "1.0.0", deprecation_message)
+[2025-02-06 14:17]   File "C:\001-code\001-gcai\python\lib\site-packages\aiohttp\connector.py", line 1169, in _create_direct_connection
+[2025-02-06 14:17]     raise ClientConnectorError(req.connection_key, exc) from exc
+[2025-02-06 14:17] aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host raw.githubusercontent.com:443 ssl:default [getaddrinfo failed]
+[2025-02-06 14:17] (pysssss:WD14Tagger) [DEBUG] Available ORT providers: TensorrtExecutionProvider, CUDAExecutionProvider, CPUExecutionProvider
+[2025-02-06 14:17] (pysssss:WD14Tagger) [DEBUG] Using ORT providers: CUDAExecutionProvider, CPUExecutionProvider
+[2025-02-06 14:17] Workspace manager - Openning file hash dict
+[2025-02-06 14:17] 🦄🦄Loading: Workspace Manager (V2.1.0)
+[2025-02-06 14:17] ------------------------------------------
+[2025-02-06 14:17] [34mComfyroll Studio v1.76 : [92m 175 Nodes Loaded[0m
+[2025-02-06 14:17] ------------------------------------------
+[2025-02-06 14:17] ** For changes, please see patch notes at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/blob/main/Patch_Notes.md
+[2025-02-06 14:17] ** For help, please see the wiki at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki
+[2025-02-06 14:17] ------------------------------------------
+[2025-02-06 14:17] [36;20m[comfyui_controlnet_aux] | INFO -> Using ckpts path: C:\001-code\001-gcai\custom_nodes\comfyui_controlnet_aux\ckpts[0m
+[2025-02-06 14:17] [36;20m[comfyui_controlnet_aux] | INFO -> Using symlinks: False[0m
+[2025-02-06 14:17] [36;20m[comfyui_controlnet_aux] | INFO -> Using ort providers: ['CUDAExecutionProvider', 'DirectMLExecutionProvider', 'OpenVINOExecutionProvider', 'ROCMExecutionProvider', 'CPUExecutionProvider', 'CoreMLExecutionProvider'][0m
+[2025-02-06 14:17] DWPose: Onnxruntime with acceleration providers detected
+[2025-02-06 14:17] [1;35m### [START] ComfyUI AlekPet Nodes [1;34mv1.0.22[0m[1;35m ###[0m
+[2025-02-06 14:17] [92mNode -> ArgosTranslateNode: [93mArgosTranslateCLIPTextEncodeNode, ArgosTranslateTextNode[0m [92m[Loading] [0m
+[2025-02-06 14:17] [92mNode -> DeepTranslatorNode: [93mDeepTranslatorCLIPTextEncodeNode, DeepTranslatorTextNode[0m [92m[Loading] [0m
+[2025-02-06 14:17] [92mNode -> GoogleTranslateNode: [93mGoogleTranslateCLIPTextEncodeNode, GoogleTranslateTextNode[0m [92m[Loading] [0m
+[2025-02-06 14:17] [92mNode -> ExtrasNode: [93mPreviewTextNode, HexToHueNode, ColorsCorrectNode[0m [92m[Loading] [0m[92mNode -> PoseNode: [93mPoseNode[0m [92m[Loading] [0m
+[2025-02-06 14:17] 
+[2025-02-06 14:17] [92mNode -> IDENode: [93mIDENode[0m [92m[Loading] [0m
+[2025-02-06 14:17] [92mNode -> PainterNode: [93mPainterNode[0m [92m[Loading] [0m
+[2025-02-06 14:17] [1;35m### [END] ComfyUI AlekPet Nodes ###[0m
+[2025-02-06 14:17] [34mFizzleDorf Custom Nodes: [92mLoaded[0m
+[2025-02-06 14:17] [36mEfficiency Nodes:[0m Attempting to add Control Net options to the 'HiRes-Fix Script' Node (comfyui_controlnet_aux add-on)...[92mSuccess![0m
+[2025-02-06 14:17] Patching UNetModel.forward
+[2025-02-06 14:17] UNetModel.forward has been successfully patched.
+[2025-02-06 14:17] [1;32m[Power Noise Suite]: 🦚🦚🦚 [93m[3mSqueaa-squee!!![0m 🦚🦚🦚
+[2025-02-06 14:17] [1;32m[Power Noise Suite]:[0m Tamed [93m11[0m wild nodes.
+[2025-02-06 14:17] 
+[2025-02-06 14:17] [92m[rgthree] Loaded 42 magnificent nodes.[00m
+[2025-02-06 14:17] [33m[rgthree] NOTE: Will NOT use rgthree's optimized recursive execution as ComfyUI has changed.[00m
+[2025-02-06 14:17] 
+[2025-02-06 14:17] 
+Import times for custom nodes:
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\websocket_image_save.py
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\FreeU_Advanced
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_TiledKSampler
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\ControlNet-LLLite-ComfyUI
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-WD14-Tagger
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\AIGODLIKE-ComfyUI-Translation
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\stability-ComfyUI-nodes
+[2025-02-06 14:17]    0.0 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_experiments
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_IPAdapter_plus
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\PowerNoiseSuite
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\images-grid-comfy-plugin
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Custom-Scripts
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\comfyui-workspace-manager
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_UltimateSDUpscale
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\Derfuu_ComfyUI_ModdedNodes
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-KJNodes
+[2025-02-06 14:17]    0.1 seconds: C:\001-code\001-gcai\custom_nodes\efficiency-nodes-comfyui
+[2025-02-06 14:17]    0.2 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Advanced-ControlNet
+[2025-02-06 14:17]    0.2 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Inspire-Pack
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\rgthree-comfy
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Crystools
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_FizzNodes
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-AnimateDiff-Evolved
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_Comfyroll_CustomNodes
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager
+[2025-02-06 14:17]    0.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Marigold
+[2025-02-06 14:17]    0.5 seconds: C:\001-code\001-gcai\custom_nodes\comfyui_controlnet_aux
+[2025-02-06 14:17]    1.7 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI-Impact-Pack
+[2025-02-06 14:17]    5.3 seconds: C:\001-code\001-gcai\custom_nodes\ComfyUI_Custom_Nodes_AlekPet
+[2025-02-06 14:17] 
+[2025-02-06 14:17] Starting server
+
+[2025-02-06 14:17] To see the GUI go to: http://127.0.0.1:8188
+[2025-02-06 14:17] FETCH DATA from: C:\001-code\001-gcai\custom_nodes\ComfyUI-Manager\extension-node-map.json [DONE]
+[2025-02-06 14:18] got prompt
+[2025-02-06 14:18] Using xformers attention in VAE
+[2025-02-06 14:18] Using xformers attention in VAE
+[2025-02-06 14:18] model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
+[2025-02-06 14:18] model_type FLUX
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_0_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_10_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_11_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_1_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_2_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_3_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_4_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_5_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_6_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_7_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_8_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_mlp_fc1.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_mlp_fc1.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_mlp_fc1.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_mlp_fc2.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_mlp_fc2.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_mlp_fc2.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_k_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_k_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_k_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_out_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_out_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_out_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_q_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_q_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_q_proj.lora_up.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_v_proj.alpha
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_v_proj.lora_down.weight
+[2025-02-06 14:18] lora key not loaded: lora_te1_text_model_encoder_layers_9_self_attn_v_proj.lora_up.weight
+[2025-02-06 14:18] Requested to load FluxClipModel_
+[2025-02-06 14:18] Loading 1 new model
+[2025-02-06 14:18] loaded completely 0.0 4777.53759765625 True
+[2025-02-06 14:18] clip missing: ['text_projection.weight']
+[2025-02-06 14:18] Token indices sequence length is longer than the specified maximum sequence length for this model (89 > 77). Running this sequence through the model will result in indexing errors
+[2025-02-06 14:18] C:\001-code\001-gcai\comfy\ldm\modules\attention.py:407: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  out = torch.nn.functional.scaled_dot_product_attention(q, k, v, attn_mask=mask, dropout_p=0.0, is_causal=False)
+[2025-02-06 14:18] Requested to load Flux
+[2025-02-06 14:18] Loading 1 new model
+[2025-02-06 14:19] loaded completely 0.0 11350.048889160156 True
+[2025-02-06 14:19] 100%|██████████| 20/20 [00:14<00:00,  1.34it/s]100%|██████████| 20/20 [00:14<00:00,  1.40it/s]
+[2025-02-06 14:19] Requested to load AutoencodingEngine
+[2025-02-06 14:19] Loading 1 new model
+[2025-02-06 14:19] loaded completely 0.0 159.87335777282715 True
+[2025-02-06 14:19] Prompt executed in 61.11 seconds
+[2025-02-06 14:19] got prompt
+[2025-02-06 14:19] loaded completely 14932.771072097778 11350.048889160156 True
+[2025-02-06 14:20] 100%|██████████| 20/20 [00:14<00:00,  1.33it/s]100%|██████████| 20/20 [00:14<00:00,  1.36it/s]
+[2025-02-06 14:20] Prompt executed in 15.74 seconds
+[2025-02-06 14:22] got prompt
+[2025-02-06 14:23] 100%|██████████| 20/20 [00:54<00:00,  2.83s/it]100%|██████████| 20/20 [00:54<00:00,  2.71s/it]
+[2025-02-06 14:23] Requested to load AutoencodingEngine
+[2025-02-06 14:23] Loading 1 new model
+[2025-02-06 14:23] loaded completely 0.0 159.87335777282715 True
+[2025-02-06 14:23] Prompt executed in 59.91 seconds

@@ -757,7 +757,15 @@ class PromptServer():
 
         if verbose:
             logging.info("Starting server\n")
-            logging.info("To see the GUI go to: {}://{}:{}".format(scheme, address, port))
+            logging.info("------------------------------------更多AI工具，等待光彩AI更新-----------------------------------")
+            logging.info("-------------------光彩AI隔离环境【解压即用】、【不限机器】、【不限次数】、【离线运行】--------------")
+            logging.info("------免责声明【不得用于任何非法活动。若因使用不当导致的法律责任，由使用者自行承担，与光彩AI无关】-----")
+            logging.info("------------------版权声明【软件基于开源项目进行二次开发和优化，版权归光彩AI所有】-------------------")
+            logging.info("---若您获取软件渠道不是光彩AI，并遇到需要额外付费的情况。请访问官方网址【www.gucai.ai】获取正版软件----")
+            logging.info("----------------------------------------AI 应用服务已启动----------------------------------------")
+            logging.info("----------------------------------------AI 应用服务已启动----------------------------------------")
+
+            # logging.info("To see the GUI go to: {}://{}:{}".format(scheme, address, port))
         if call_on_start is not None:
             call_on_start(scheme, address, port)
 

@@ -262,7 +262,8 @@ if __name__ == "__main__":
             import webbrowser
             if os.name == 'nt' and address == '0.0.0.0':
                 address = '127.0.0.1'
-            webbrowser.open(f"{scheme}://{address}:{port}")
+            # print(f"Web UI available at {scheme}://{address}:{port}")
+            # webbrowser.open(f"{scheme}://{address}:{port}")
         call_on_start = startup_server
 
     try:

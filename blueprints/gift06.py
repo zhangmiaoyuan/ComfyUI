@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, current_app, send_file
+from flask import Blueprint, request, jsonify, current_app, send_file, render_template
 import os
 import base64
 from PIL import Image
@@ -18,6 +18,10 @@ logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
 gift_bp = Blueprint('gift06', __name__,url_prefix='/gift06')
+
+@gift_bp.route('/')
+def index():
+    return render_template('006-gift/index.html')
 
 def get_images(ws, prompt):
     try:

@@ -6,6 +6,7 @@ from blueprints.Earrings02 import Earrings_bp
 from blueprints.ring05 import ring_bp
 from blueprints.headwear07 import headwear_bp
 from blueprints.gift06 import gift_bp
+from blueprints.chatbox08 import chatbox_bp
 from blueprints.run_batch import run_batch_bp, runner
 from blueprints.register import bp as register_bp
 import os
@@ -60,9 +61,10 @@ app.register_blueprint(bracelets_bp)
 app.register_blueprint(necklace_bp)
 app.register_blueprint(bracelet_bp)
 app.register_blueprint(Earrings_bp)
-app.register_blueprint(headwear_bp)
 app.register_blueprint(ring_bp)
 app.register_blueprint(gift_bp)
+app.register_blueprint(headwear_bp)
+app.register_blueprint(chatbox_bp)
 app.register_blueprint(run_batch_bp, url_prefix='/run_batch')
 app.register_blueprint(register_bp)
 
@@ -208,7 +210,7 @@ def necklace():
 def ring():
     return render_template('005-ring/index.html')
 
-@app.route('/templates/006-gift/')
+@app.route('/gift06/')
 @login_required
 def gift():
     return render_template('006-gift/index.html')
@@ -217,6 +219,11 @@ def gift():
 @login_required
 def headwear():
     return render_template('007-headwear/index.html')
+
+@app.route('/chatbox')
+@login_required
+def chatbox():
+    return render_template('008-chatbox/index.html')
 
 # 添加before_request处理器来拦截所有请求
 @app.before_request

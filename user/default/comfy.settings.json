@@ -1,3 +1,4 @@
 {
-    "AGL.Locale": "zh-CN"
+    "AGL.Locale": "zh-CN",
+    "Comfy.DevMode": true
 }

@@ -62,7 +62,7 @@ def translate_to_english(chinese_text):
 def _translate_with_ollama(chinese_text):
     try:
         # Ollama API endpoint
-        url = "http://119.145.30.205:11434/api/generate"
+        url = "http://119.145.30.206:11434/api/generate"
         # url = "http://192.168.1.4:11434/api/generate"
         
         # 构建翻译提示

@@ -4,6 +4,8 @@ import os
 import sys
 import logging
 import uuid
+import platform
+import socket
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
@@ -16,19 +18,18 @@ def get_system_info(save_to_file=False):
     try:
         import os
         import uuid
+        import platform
+        import socket
         
         # 定义唯一标识符文件路径
         device_id_file = 'device_id.txt'
         
-        # 检查是否存在唯一标识符文件
-        if os.path.exists(device_id_file):
-            with open(device_id_file, 'r') as f:
-                device_id = f.read().strip()  # 读取已存在的唯一标识符
-                logger.info(f"Using existing device ID: {device_id}")
-                return device_id
-        
-        # 生成设备的唯一标识符
-        device_id = str(uuid.uuid1())  # 或者使用 uuid.uuid4() 生成随机 UUID
+        # 获取主机名
+        hostname = socket.gethostname()
+        # 获取操作系统信息
+        os_info = platform.system() + " " + platform.release()
+        # 生成设备的唯一标识符，使用主机名和操作系统信息
+        device_id = f"{hostname}-{os_info}"
         logger.info(f"Generated new device ID: {device_id}")
         
         # 只有在明确要求保存时才保存到文件
@@ -92,26 +93,23 @@ def register():
 
     return render_template('register.html')
 
-@bp.route('/register/get_mac', methods=['GET'])
+@bp.route('/get_mac', methods=['GET'])
 def get_mac():
     try:
-        # 获取系统标识，但不保存到文件
-        system_id = get_system_info(save_to_file=False)
-        logger.info(f"Retrieved system ID: {system_id}")
-        
-        if not system_id:
+        device_id = get_system_info(save_to_file=True)  # 使用相同的设备标识符生成函数
+        if device_id:
+            return jsonify({
+                'success': True,
+                'mac_addresses': [device_id]  # 返回设备标识符
+            })
+        else:
             return jsonify({
                 'success': False,
-                'message': '无法获取设备标识'
+                'message': '无法获取设备标识符'
             })
-
-        return jsonify({
-            'success': True,
-            'mac_addresses': [system_id]
-        })
     except Exception as e:
-        logger.error(f"Error in get_mac route: {e}")
+        logger.error(f"Error getting device ID: {e}")
         return jsonify({
             'success': False,
-            'message': f'获取设备标识失败：{str(e)}'
+            'message': str(e)
         })

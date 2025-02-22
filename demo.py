@@ -8,7 +8,7 @@ from blueprints.headwear07 import headwear_bp
 from blueprints.gift06 import gift_bp
 from blueprints.chatbox08 import chatbox_bp
 from blueprints.run_batch import run_batch_bp, runner
-from blueprints.register import bp as register_bp
+from blueprints.register import bp as register_bp, get_system_info
 import os
 from functools import wraps
 from flask_cors import CORS, cross_origin
@@ -115,6 +115,14 @@ def login():
             'success': False,
             'need_register': True,
             'message': '未检测到设备码，请先完成注册。'
+        })
+    
+    # 验证当前设备标识是否与注册时的一致
+    current_device_id = get_system_info(save_to_file=False)
+    if current_device_id != device_id:
+        return jsonify({
+            'success': False,
+            'message': '当前设备与注册设备不匹配，无法登录'
         })
     
     try:
